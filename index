@@ -3,20 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/teste.css">
     <title>Menu</title>
 </head>
 <body>
-   
+    <header>
+        <h1>Tela Principal</h1>
+    </header>
+ 
+    <main>
+        <section id="container">
+            <section id="botoes">
+                <a href="idade.php" onmouseover="aparecerTexto('idade')" onmouseout="someTexto('idade')">
+                    <button class="btn_telaPrincipal" id="idade">Calculadora de Idade</button>
+                </a>
+                <a href="temperatura.php" onmouseover="aparecerTexto('temperatura')" onmouseout="someTexto('temperatura')">
+                    <button class="btn_telaPrincipal" id="temperatura">Medidor de Temperatura</button>
+                </a>
+            </section>
 
-    <form action="temperatura.php">  
-    <input type="submit" value="temperatura" class="botao">
-    </form>
+            <section id="infos">
+                <p id="txtPadrao">Passe o mouse em cima dos botões</p>
+                <p id="txtTemperatura">Use esta ferramenta para converter rapidamente valores entre diferentes escalas de temperatura: Celsius, Fahrenheit e Kelvin.</p>
+                <p id="txtIdade">Descubra sua idade com precisão! Informe sua data de nascimento e a calculadora mostrará exatamente quantos anos, meses e dias você tem.</p>
+            </section>
+        </section>
+    </main>
+    <script>
+        // variaveis
 
-    <form action="idade.php">
-    <input type="submit" value="idade" class="botao">
-    </form>
+        // Elementos DOM
+        const txtInfos = document.getElementById('infos')
+        const txtPadrao = document.getElementById('txtPadrao')
+        const txtIdade = document.getElementById('txtIdade')
+        const txtTemperatura = document.getElementById('txtTemperatura')
 
+        // funções
+        function aparecerTexto(metodo) {
+            txtPadrao.style.display = 'none'
+            txtInfos.style.border = '1px solid black'
 
+            switch (metodo) {
+                case 'idade': 
+                txtIdade.style.display = 'block'
+                txtInfos.style.backgroundColor = 'var(--btnIdadeColor)'
+                break
 
+                case 'temperatura':
+                txtTemperatura.style.display = 'block'
+                txtInfos.style.backgroundColor = 'var(--btnTemperaturaColor)'
+                break
+            }
+        }
+
+        function someTexto(metodo) {
+            txtPadrao.style.display = 'block'
+            txtInfos.style.border = 'none'
+            txtInfos.style.backgroundColor = 'white'
+            
+            switch (metodo) {
+                case 'idade': 
+                txtIdade.style.display = 'none'
+                break
+
+                case 'temperatura':
+                txtTemperatura.style.display = 'none'
+                break
+            }
+        }
+    </script>
 </body>
 </html>
