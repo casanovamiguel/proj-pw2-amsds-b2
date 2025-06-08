@@ -1,0 +1,40 @@
+:root {
+    
+    --fontePrincipal: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color:white;
+    color: black;
+    font-family:var(--fontePrincipal) ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+
+form {
+    background-color: bisque;
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: black;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+
+
+p {
+    text-align: center;
+    font-size: 18px;
+}
+
+
+ 
+
+
